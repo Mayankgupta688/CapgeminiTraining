@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Including JavaScript</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/scriptOne.js" type=></script>
+
+        <script>
+
+            function helper() {
+                alert(window.myDetails.name);
+            }
+
+            if(window.myDetails == undefined) {
+                var newScript = document.createElement("script");
+                newScript.src = "./scripts/scriptOne.js";
+                newScript.type="text/javascript";
+
+                newScript.onload = helper;
+
+                document.getElementsByTagName("head")[0].append(newScript);
+            }
+
+        </script>
+
+    </head>
+    <body>
+
+        <div>This is Page Body</div>
+
+    </body>
+</html>
