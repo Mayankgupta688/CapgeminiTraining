@@ -1,18 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as data from '../app-data/employeeList.json';
+import { IEmployee } from '../shared/employee.interface';
 
 @Component({
     selector: 'app-employee-list',
-    templateUrl: './employee.list.component.html'
+    templateUrl: './employee.list.component.html',
+    styleUrls: ['./employee.list.component.css', 'employee.list.component.other.css']
 })
-export class EmployeeListComponent {
-    employeeList: any[];
+export class EmployeeListComponent implements OnInit {
 
-    constructor() {
+    username: string;
+    password: string;
 
-        // tslint:disable-next-line:no-string-literal
-        console.log();
+    ngOnInit() {
+        this.employeeList = data['default'];
+    }
 
-        this.employeeList = data['default']
+    aaaa(message) {
+        alert(message);
+    }
+
+    updateData() {
+        alert(this.username);
+        alert(this.password);
+    }
+
+    employeeList: IEmployee[];
+
+    getUserName(employee) {
+
+        alert(employee.name);
+    }
+
+    setUserName(name, employee) {
+
+        employee.name = name;
     }
 }

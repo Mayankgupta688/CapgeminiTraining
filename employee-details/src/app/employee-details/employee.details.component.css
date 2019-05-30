@@ -1,0 +1,9 @@
+.employee-list {
+    border-bottom: 1px solid red; 
+    padding-bottom: 10px; 
+    margin-bottom: 20px;
+}
+
+.employee-name {
+    color: red;
+}

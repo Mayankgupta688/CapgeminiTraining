@@ -1,27 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-employee-details',
-    templateUrl: './employee.details.component.html'
+    templateUrl: './employee.details.component.html',
+    styleUrls: ["./employee.details.component.css", "./employee.details.component.other.css"]
 })
 export class EmployeeDetailsComponent {
-    name: string;
-    age: number;
-    designation: string;
-    salary: number;
+    
+    @Input() employee;
 
-    constructor() {
-        this.name = 'Anshul Gupta';
-        this.age = 100;
-        this.designation = 'Developer',
-        this.salary = 1000;
+    @Output() notify: EventEmitter<string> = new EventEmitter<string>();
+
+    aaaa(employee) {
+        this.notify.emit("User Clicked: " + employee.name);
     }
 
-    returnSalutation() {
-        if (this.age > 10) {
-            return 'Senior ';
-        } else {
-            return 'Junior ';
-        }
-    }
 }

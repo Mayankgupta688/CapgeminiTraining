@@ -1,10 +1,13 @@
 <div>
+
+    <h2>{{idSum | calculateSum : employeeList}}</h2>
+
+    UserName: <input type="text" [(ngModel)]="username" /><br><br>
+    Passwords: <input type="text" [(ngModel)]="password" /><br><br>
+    <input type="button" value="Click to Submit" (click)="updateData()" /><br><br><hr>
+
     <div *ngFor="let employee of employeeList">
-        <div style="border-bottom: 1px solid red; margin-bottom: 10px;">
-            <b>User Name: {{employee.name}}</b><br><br>
-            <b>User Id: {{employee.id}}</b><br><br>
-            <b>User Created At: {{employee.createdAt}}</b><br><br>
-            <img [src]="employee.avatar" [title]="employee.name"/>
-        </div>
+        <app-employee-details [employee]="employee" (notify)="aaaa($event)"></app-employee-details>
     </div>
+
 </div>
