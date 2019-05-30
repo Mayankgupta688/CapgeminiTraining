@@ -1,0 +1,10 @@
+<div *ngIf="age >= 50">
+    <b>User Name: {{returnSalutation() + name}}</b><br><br>
+    <b>User Age: {{age + " Years"}}</b><br><br>
+    <b>{{'User Designation: ' + designation}}</b><br><br>
+    <b>Employee Salary: {{salary}}</b>
+</div>
+
+<div *ngIf="age < 50">
+    <h1>No Senior Developer</h1>
+</div>

@@ -1,19 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [];
+
 
 import { EmployeeDetailsComponent } from './employee-details/employee.details.component';
+import { EmployeeListComponent } from './employee-list/employee.list.component';
 
 @NgModule({
   declarations: [
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(routes)
   ],
   providers: [],
-  bootstrap: [EmployeeDetailsComponent]
+  bootstrap: [EmployeeListComponent]
 })
 export class AppModule { }

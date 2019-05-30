@@ -1,0 +1,10 @@
+<div>
+    <div *ngFor="let employee of employeeList">
+        <div style="border-bottom: 1px solid red; margin-bottom: 10px;">
+            <b>User Name: {{employee.name}}</b><br><br>
+            <b>User Id: {{employee.id}}</b><br><br>
+            <b>User Created At: {{employee.createdAt}}</b><br><br>
+            <img [src]="employee.avatar" [title]="employee.name"/>
+        </div>
+    </div>
+</div>
